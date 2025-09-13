@@ -2,7 +2,7 @@ import React from "react";
 import { nanoid } from "nanoid";
 import { ContactsForm } from "./components/ContactsForm";
 import { Filter } from "./components/Filter";
-import { Contacts } from "./components/Contacts";
+import { ContactsTest } from "./components/Contacts";
 import { AppStyle } from "./styles/AppStyle";
 
 class App extends React.Component {
@@ -59,7 +59,7 @@ class App extends React.Component {
         <ContactsForm form={this.addContact} />
         <h2>Contacts</h2>
         <Filter search={this.searchContact} />
-        <Contacts
+        <ContactsTest
           id={nanoid()}
           contacts={filteredContacts}
           search={this.searchContact}
