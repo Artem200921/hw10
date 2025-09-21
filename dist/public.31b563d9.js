@@ -16144,6 +16144,15 @@ class App extends (0, _reactDefault.default).Component {
         ],
         filter: ""
     };
+    componentDidMount() {
+        const savedContacts = localStorage.getItem("contacts");
+        if (savedContacts) this.setState({
+            contacts: JSON.parse(savedContacts)
+        });
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.contacts !== this.state.contacts) localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+    }
     searchContact = (e)=>{
         this.setState({
             filter: e.target.value
@@ -16182,44 +16191,44 @@ class App extends (0, _reactDefault.default).Component {
                     children: "Phonebook"
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 58,
+                    lineNumber: 71,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactsForm.ContactsForm), {
                     form: this.addContact
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 59,
+                    lineNumber: 72,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                     children: "Contacts"
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 60,
+                    lineNumber: 73,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filter.Filter), {
                     search: this.searchContact
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 61,
+                    lineNumber: 74,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contacts.Contacts), {
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contacts.ContactsTest), {
                     id: (0, _nanoid.nanoid)(),
                     contacts: filteredContacts,
                     search: this.searchContact,
                     delete: this.deleteContact
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 62,
+                    lineNumber: 75,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.js",
-            lineNumber: 57,
+            lineNumber: 70,
             columnNumber: 7
         }, this);
     }
@@ -18717,13 +18726,13 @@ $parcel$ReactRefreshHelpers$3bad.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Contacts", ()=>Contacts);
+parcelHelpers.export(exports, "ContactsTest", ()=>ContactsTest);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _contact = require("./Contact");
 var _contacts = require("../styles/Contacts");
-class Contacts extends (0, _reactDefault.default).Component {
+class ContactsTest extends (0, _reactDefault.default).Component {
     render() {
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contacts.Contacts), {
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
